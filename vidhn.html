@@ -1,0 +1,803 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidhan AI - AI Legal Document Explainer</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/6b8f7d0f9d.js" crossorigin="anonymous"></script>
+
+        <style>
+        *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Navbar */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+z-index:1000;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#38bdf8;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:17px;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#38bdf8;
+}
+
+.btn{
+padding:12px 28px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:.4s;
+}
+
+.btn:hover{
+background:#0284c7;
+transform:translateY(-3px);
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 8%;
+background:linear-gradient(135deg,#020617,#0f172a,#1d4ed8);
+}
+
+.hero-left{
+width:50%;
+}
+
+.hero-left h1{
+font-size:60px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.hero-left p{
+font-size:18px;
+line-height:30px;
+color:#cbd5e1;
+margin-bottom:35px;
+}
+
+.hero-btn{
+display:flex;
+gap:20px;
+}
+
+.primary-btn,
+.secondary-btn{
+
+padding:15px 35px;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:.4s;
+
+}
+
+.primary-btn{
+background:#38bdf8;
+color:white;
+}
+
+.primary-btn:hover{
+transform:scale(1.05);
+background:#0284c7;
+}
+
+.secondary-btn{
+border:2px solid #38bdf8;
+color:white;
+}
+
+.secondary-btn:hover{
+background:#38bdf8;
+}
+
+/* Glass Card */
+
+.hero-right{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.glass-card{
+
+width:340px;
+padding:35px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+animation:float 4s ease-in-out infinite;
+
+}
+
+.glass-card i{
+
+font-size:60px;
+color:#38bdf8;
+margin-bottom:20px;
+
+}
+
+.glass-card h2{
+margin-bottom:15px;
+}
+
+.glass-card p{
+color:#cbd5e1;
+}
+
+/* Features */
+
+.features{
+
+padding:100px 8%;
+text-align:center;
+
+}
+
+.features h2{
+
+font-size:40px;
+margin-bottom:50px;
+
+}
+
+.feature-box{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:#1e293b;
+padding:35px;
+border-radius:20px;
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+box-shadow:0 15px 40px rgba(56,189,248,.25);
+
+}
+
+.card i{
+
+font-size:45px;
+color:#38bdf8;
+margin-bottom:20px;
+
+}
+
+.card h3{
+margin-bottom:15px;
+}
+
+/* Stats */
+
+.stats{
+
+display:flex;
+justify-content:space-around;
+padding:80px 8%;
+background:#111827;
+text-align:center;
+
+}
+
+.stats h2{
+
+font-size:45px;
+color:#38bdf8;
+
+}
+
+.stats p{
+
+margin-top:10px;
+
+}
+
+/* About */
+
+.about{
+
+padding:100px 8%;
+text-align:center;
+
+}
+
+.about h2{
+
+font-size:42px;
+margin-bottom:20px;
+
+}
+
+.about p{
+
+max-width:800px;
+margin:auto;
+font-size:18px;
+line-height:30px;
+color:#cbd5e1;
+
+}
+
+/* Contact */
+
+.contact{
+
+padding:100px 8%;
+display:flex;
+flex-direction:column;
+gap:20px;
+
+}
+
+.contact h2{
+
+text-align:center;
+margin-bottom:20px;
+
+}
+
+.contact input,
+.contact textarea{
+
+padding:18px;
+border:none;
+outline:none;
+border-radius:12px;
+background:#1e293b;
+color:white;
+
+}
+
+.contact textarea{
+
+height:150px;
+resize:none;
+
+}
+
+.contact button{
+
+padding:16px;
+background:#38bdf8;
+border:none;
+border-radius:12px;
+font-size:18px;
+color:white;
+cursor:pointer;
+transition:.4s;
+
+}
+
+.contact button:hover{
+
+background:#0284c7;
+
+}
+
+/* Footer */
+
+footer{
+
+padding:25px;
+text-align:center;
+background:#020617;
+color:#94a3b8;
+
+}
+
+/* Animation */
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.hero-left{
+
+width:100%;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.hero-btn{
+
+justify-content:center;
+
+}
+
+.hero-right{
+
+margin-top:50px;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.stats{
+
+flex-direction:column;
+gap:30px;
+
+}
+
+}
+        </style>
+    </head>
+    <body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+⚖️ <span>Vidhan AI</span>
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#">Home</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<a href="#" class="btn">Get Started</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+Understand Legal Documents
+with AI
+</h1>
+
+<p>
+
+Upload agreements, contracts and notices.
+Vidhan AI explains them in simple language,
+highlights risks and gives instant summaries.
+
+</p>
+
+<div class="hero-btn">
+
+<a href="#" class="primary-btn">
+
+Upload Document
+
+</a>
+
+<a href="#" class="secondary-btn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="glass-card">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+<h2>AI Legal Assistant</h2>
+
+<p>
+
+Instantly understand legal documents
+using Artificial Intelligence.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="features" id="features">
+
+<h2>Why Choose Vidhan AI?</h2>
+
+<div class="feature-box">
+
+<div class="card">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<h3>Document Upload</h3>
+
+<p>
+
+Upload PDF or DOC files securely.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>AI Explanation</h3>
+
+<p>
+
+Legal terms explained in simple language.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Privacy</h3>
+
+<p>
+
+Your files remain safe and encrypted.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>Instant Summary</h3>
+
+<p>
+
+Get important points within seconds.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div>
+
+<h2 class="counter" data-target="5000">0</h2>
+
+<p>Documents Explained</p>
+
+</div>
+
+<div>
+
+<h2 class="counter" data-target="1000">0</h2>
+
+<p>Happy Users</p>
+
+</div>
+
+<div>
+
+<h2 class="counter" data-target="99">0</h2>
+
+<p>Accuracy %</p>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<h2>About Vidhan AI</h2>
+
+<p>
+
+Vidhan AI helps everyone understand legal
+documents quickly using Artificial Intelligence.
+
+</p>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Message"></textarea>
+
+<button>Send Message</button>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Vidhan AI | AI Legal Document Explainer
+
+</p>
+
+</footer>
+
+
+        <script>
+            // Navbar Background Change
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+if (window.scrollY > 50) {
+
+header.style.background = "rgba(15,23,42,0.95)";
+header.style.backdropFilter = "blur(20px)";
+
+}
+
+else {
+
+header.style.background = "rgba(255,255,255,0.08)";
+header.style.backdropFilter = "blur(15px)";
+
+}
+
+});
+
+
+
+// Counter Animation
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+const updateCounter = () => {
+
+const target = +counter.getAttribute("data-target");
+
+const count = +counter.innerText;
+
+const speed = target / 100;
+
+if (count < target) {
+
+counter.innerText = Math.ceil(count + speed);
+
+setTimeout(updateCounter, 20);
+
+}
+
+else {
+
+counter.innerText = target;
+
+}
+
+};
+
+updateCounter();
+
+});
+
+
+
+// Smooth Scroll
+
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+
+anchor.addEventListener("click", function(e) {
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+behavior: "smooth"
+
+});
+
+});
+
+});
+
+
+
+// Scroll Reveal Animation
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if (entry.isIntersecting) {
+
+entry.target.style.opacity = "1";
+
+entry.target.style.transform = "translateY(0)";
+
+}
+
+});
+
+});
+
+cards.forEach(card => {
+
+card.style.opacity = "0";
+
+card.style.transform = "translateY(40px)";
+
+card.style.transition = "0.7s";
+
+observer.observe(card);
+
+});
+
+
+
+// Button Click Animation
+
+const buttons = document.querySelectorAll("button,.primary-btn,.secondary-btn,.btn");
+
+buttons.forEach(btn => {
+
+btn.addEventListener("click", () => {
+
+btn.style.transform = "scale(0.95)";
+
+setTimeout(() => {
+
+btn.style.transform = "scale(1)";
+
+},150);
+
+});
+
+});
+
+
+
+// Typing Effect
+
+const text = "AI Legal Document Explainer";
+
+const title = document.querySelector(".hero-left h1");
+
+let i = 0;
+
+title.innerHTML = "";
+
+function typing() {
+
+if (i < text.length) {
+
+title.innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typing, 70);
+
+}
+
+}
+
+typing();
+        </script>
+    </body>
+</html>
