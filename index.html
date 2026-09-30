@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vidhan AI | Legal Document Explainer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                Vidhan <span>AI</span>
+            </h2>
+
+            <small>
+                Legal Document Explainer
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a class="active" href="index.html">
+            Home
+        </a>
+
+        <a href="features.html">
+            Features
+        </a>
+
+        <a href="how-it-works.html">
+            How It Works
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="documents.html">
+            My Documents
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button class="language">
+
+            <i class="fa-solid fa-globe"></i>
+
+            Marathi
+
+        </button>
+
+
+        <!-- SIGN UP / REGISTER BUTTON -->
+        <button
+            class="login-btn"
+            id="loginBtn"
+            onclick="window.location.href='register.html'">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            Sign Up
+
+        </button>
+
+
+        <!-- LOGOUT BUTTON -->
+        <button
+            class="login-btn logout-btn"
+            id="logoutBtn"
+            onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+
+            <div class="badge">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                AI-Powered Legal Assistant
+
+            </div>
+
+
+            <h1>
+
+                Understand Legal Documents
+
+                <span>
+                    In Simple Language
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Upload your legal documents and get
+                easy-to-understand summaries,
+                important clauses, and key legal terms.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <button
+                    class="primary-btn"
+                    onclick="goToUpload()">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    Upload Document
+
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="trySample()">
+
+                    <i class="fa-regular fa-file-lines"></i>
+
+                    Try Sample
+
+                </button>
+
+            </div>
+
+
+            <div class="trust">
+
+
+                <div>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Secure
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    Private
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Fast
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
