@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Documents - Vidhan AI</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Your Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <div class="logo-text">
+            <h2>Vidhan <span>AI</span></h2>
+            <small>Legal Intelligence Platform</small>
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="features.html">
+            Features
+        </a>
+
+        <a href="how-it-works.html">
+            How It Works
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="upload.html" class="active">
+            Upload
+        </a>
+
+        <a href="documents.html">
+            My Documents
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button class="language">
+            <i class="fa-solid fa-globe"></i>
+            EN
+        </button>
+
+        <button class="login-btn"
+                onclick="window.location.href='login.html'">
+            Login
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= UPLOAD PAGE ================= -->
+
+<main class="upload-page">
+
+    <div class="upload-header">
+
+        <span class="upload-tag">
+            <i class="fa-solid fa-file-arrow-up"></i>
+            DOCUMENT CENTER
+        </span>
+
+        <h1>
+            Upload Your
+            <span>Legal Document</span>
+        </h1>
+
+        <p>
+            Upload your legal documents securely and let Vidhan AI
+            help you understand, analyze and organize them.
+        </p>
+
+    </div>
+
+
+    <!-- ================= UPLOAD CARD ================= -->
+
+    <div class="upload-card">
+
+        <div class="upload-icon">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+        </div>
+
+        <h2>
+            Upload Document
+        </h2>
+
+        <p>
+            Select a PDF or legal document from your device.
+        </p>
+
+
+        <!-- FILE INPUT -->
+
+        <label for="documentFile" class="upload-box">
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            <span>
+                Click to choose a document
+            </span>
+
+            <small>
+                PDF, DOC, DOCX up to 10MB
+            </small>
+
+        </label>
+
+        <input
+            type="file"
+            id="documentFile"
+            accept=".pdf,.doc,.docx"
+            hidden
+        >
+
+
+        <!-- SELECTED FILE -->
+
+        <div id="selectedFile" class="selected-file">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            <span id="fileName">
+                No file selected
+            </span>
+
+        </div>
+
+
+        <!-- UPLOAD BUTTON -->
+
+        <button class="upload-btn" onclick="uploadDocument()">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            Upload Document
+
+        </button>
+
+
+        <p id="uploadMessage" class="upload-message"></p>
+
+    </div>
+
+</main>
+
+
+<script>
+
+const fileInput = document.getElementById("documentFile");
+const fileName = document.getElementById("fileName");
+
+fileInput.addEventListener("change", function () {
+
+    if (this.files.length > 0) {
+
+        fileName.textContent = this.files[0].name;
+
+    } else {
+
+        fileName.textContent = "No file selected";
+
+    }
+
+});
+
+
+function uploadDocument() {
+
+    const message = document.getElementById("uploadMessage");
+
+    if (fileInput.files.length === 0) {
+
+        message.textContent = "Please select a document first.";
+
+        return;
+    }
+
+    message.textContent =
+        "Document selected successfully.";
+
+}
+
+</script>
+
+</body>
+</html>

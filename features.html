@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vidhan AI | Features</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                Vidhan<span>AI</span>
+            </h2>
+
+            <small>
+                Legal Document Explainer
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a class="active" href="features.html">
+            Features
+        </a>
+
+        <a href="how-it-works.html">
+            How It Works
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="documents.html">
+            My Documents
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button class="language">
+
+            <i class="fa-solid fa-globe"></i>
+
+            Marathi
+
+        </button>
+
+
+        <button
+            class="login-btn"
+            id="loginBtn"
+            onclick="window.location.href='login.html'">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            Login
+
+        </button>
+
+
+        <button
+            class="login-btn logout-btn"
+            id="logoutBtn"
+            onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= FEATURES PAGE ================= -->
+
+<main class="features-page">
+
+
+    <!-- HEADER -->
+
+    <section class="features-header">
+
+        <span class="features-tag">
+            VIDHAN AI FEATURES
+        </span>
+
+        <h1>
+            Powerful Features for
+            <span>Easy Legal Understanding</span>
+        </h1>
+
+        <p>
+            Vidhan AI helps you understand complex legal documents
+            through simple summaries, important clauses and clear
+            explanations.
+        </p>
+
+    </section>
+
+
+
+    <!-- FEATURE CARDS -->
+
+    <section class="feature-grid">
+
+
+        <!-- 01 -->
+
+        <div class="feature-card">
+
+            <span class="feature-number">
+                01
+            </span>
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-file-arrow-up"></i>
+
+            </div>
+
+            <h2>
+                Document Upload
+            </h2>
+
+            <p>
+                Upload your legal documents in PDF or text format
+                and get them ready for analysis.
+            </p>
+
+        </div>
+
+
+
+        <!-- 02 -->
+
+        <div class="feature-card">
+
+            <span class="feature-number">
+                02
+            </span>
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+            <h2>
+                Simple Summary
+            </h2>
+
+            <p>
+                Get an easy-to-understand summary of lengthy
+                legal documents without complicated language.
+            </p>
+
+        </div>
+
+
+
+        <!-- 03 -->
+
+        <div class="feature-card">
+
+            <span class="feature-number">
+                03
+            </span>
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+            </div>
+
+            <h2>
+                Legal Analysis
+            </h2>
+
+            <p>
+                Understand the important information and meaning
+                contained inside your legal document.
+            </p>
+
+        </div>
+
+
+
+        <!-- 04 -->
+
+        <div class="feature-card">
+
+            <span class="feature-number">
+                04
+            </span>
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+            <h2>
+                Important Clauses
+            </h2>
+
+            <p>
+                Quickly identify important clauses, conditions,
+                responsibilities and critical information.
+            </p>
+
+        </div>
+
+
+
+        <!-- 05 -->
+
+        <div class="feature-card">
+
+            <span class="feature-number">
+                05
+            </span>
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-key"></i>
+
+            </div>
+
+            <h2>
+                Key Legal Terms
+            </h2>
+
+            <p>
+                Understand difficult legal terms with clear and
+                simple explanations.
+            </p>
+
+        </div>
+
+
+
+        <!-- 06 -->
+
+        <div class="feature-card">
+
+            <span class="feature-number">
+                06
+            </span>
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-language"></i>
+
+            </div>
+
+            <h2>
+                Marathi & English
+            </h2>
+
+            <p>
+                Access legal explanations in both Marathi and
+                English for better understanding.
+            </p>
+
+        </div>
+
+
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function updateLoginButton() {
+
+    const token = localStorage.getItem("token");
+
+    const loginBtn =
+        document.getElementById("loginBtn");
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    if (token) {
+
+        loginBtn.style.display = "none";
+
+        logoutBtn.style.display = "block";
+
+    } else {
+
+        loginBtn.style.display = "block";
+
+        logoutBtn.style.display = "none";
+
+    }
+
+}
+
+
+function logout() {
+
+    localStorage.removeItem("token");
+
+    localStorage.removeItem("user");
+
+    window.location.href = "index.html";
+
+}
+
+
+updateLoginButton();
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,3233 @@
+
+/* =========================================================
+   VIDHAN AI - COMPLETE PROFESSIONAL STYLE
+   HOME + FEATURES + HOW IT WORKS + ABOUT + LOGIN + FOOTER
+========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    color: #10243e;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   2. NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    min-height: 78px;
+
+    padding: 0 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #e8eef5;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 20px rgba(15, 40, 70, 0.04);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+    color: #10243e;
+}
+
+.logo-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #176dcc,
+        #0d4f9c
+    );
+
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 7px 18px rgba(23, 109, 204, 0.22);
+}
+
+.logo-text h2 {
+    font-size: 21px;
+    line-height: 1.1;
+
+    color: #10243e;
+}
+
+.logo-text h2 span {
+    color: #176dcc;
+}
+
+.logo-text small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #77879a;
+
+    font-size: 10px;
+}
+
+
+/* NAVIGATION */
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    color: #53657a;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 28px 0;
+
+    transition: 0.25s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #176dcc;
+}
+
+.navbar nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 17px;
+
+    height: 2px;
+
+    border-radius: 5px;
+
+    background: #176dcc;
+}
+
+
+/* NAV ACTIONS */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.language {
+    border: none;
+
+    background: transparent;
+
+    color: #53657a;
+
+    padding: 9px 11px;
+
+    font-size: 13px;
+}
+
+.language i {
+    margin-right: 5px;
+}
+
+.login-btn {
+    border: none;
+
+    padding: 10px 17px;
+
+    border-radius: 9px;
+
+    background: #176dcc;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.login-btn:hover {
+    background: #0d4f9c;
+
+    transform: translateY(-1px);
+}
+
+.logout-btn {
+    display: none;
+}
+
+
+/* =========================================================
+   3. HOME HERO
+========================================================= */
+
+.hero {
+    min-height: calc(100vh - 76px);
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    overflow: hidden;
+}
+
+
+/* HERO OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 22, 39, 0.95) 0%,
+            rgba(5, 31, 53, 0.88) 42%,
+            rgba(7, 43, 70, 0.60) 100%
+        );
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 80px 6%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 680px;
+}
+
+
+/* BADGE */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    margin-bottom: 22px;
+
+    border-radius: 30px;
+
+    color: #dceeff;
+
+    background: rgba(255,255,255,0.09);
+
+    border: 1px solid rgba(255,255,255,0.16);
+
+    font-size: 12px;
+
+    backdrop-filter: blur(8px);
+}
+
+.badge i {
+    color: #55adff;
+}
+
+
+/* HERO TITLE */
+
+.hero h1 {
+    color: white;
+
+    font-size: clamp(42px, 5vw, 67px);
+
+    line-height: 1.08;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #58adff;
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero-text > p {
+    max-width: 590px;
+
+    color: #d6e2ed;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    margin-bottom: 30px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 13px;
+
+    margin-bottom: 30px;
+}
+
+.primary-btn,
+.secondary-btn {
+    min-height: 48px;
+
+    padding: 0 21px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.primary-btn {
+    border: none;
+
+    background: #176dcc;
+
+    color: white;
+
+    box-shadow:
+        0 9px 22px rgba(0,0,0,0.18);
+}
+
+.primary-btn:hover {
+    background: #0d4f9c;
+
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid rgba(255,255,255,0.28);
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    backdrop-filter: blur(8px);
+}
+
+.secondary-btn:hover {
+    background: rgba(255,255,255,0.15);
+
+    transform: translateY(-2px);
+}
+
+
+/* TRUST */
+
+.trust {
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+.trust div {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #d2dfeb;
+
+    font-size: 12px;
+}
+
+.trust i {
+    color: #59b0ff;
+}
+
+
+/* =========================================================
+   4. HOME FEATURES SECTION
+========================================================= */
+
+.features-section {
+    padding: 90px 6%;
+
+    background: #f7faff;
+
+    scroll-margin-top: 76px;
+}
+
+.section-title {
+    max-width: 720px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.section-title > span {
+    color: #176dcc;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    margin: 10px 0;
+
+    color: #10243e;
+
+    font-size: 36px;
+
+    line-height: 1.2;
+}
+
+.section-title h2 strong {
+    color: #176dcc;
+}
+
+.section-title p {
+    color: #708197;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.features-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+
+/* HOME FEATURE CARD ONLY */
+
+.features-section .feature-card {
+    padding: 27px 20px;
+
+    background: white;
+
+    border: 1px solid #e9eff6;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 28px rgba(17, 47, 78, 0.06);
+
+    transition: 0.3s ease;
+}
+
+.features-section .feature-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d7e7f8;
+
+    box-shadow:
+        0 15px 35px rgba(17, 47, 78, 0.10);
+}
+
+.features-section .feature-card > i {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 13px;
+
+    background: #edf5ff;
+
+    color: #176dcc;
+
+    font-size: 19px;
+}
+
+.features-section .feature-card h3 {
+    margin-bottom: 8px;
+
+    color: #10243e;
+
+    font-size: 16px;
+}
+
+.features-section .feature-card p {
+    color: #748398;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   5. LOGIN PAGE
+========================================================= */
+
+.auth-body {
+    min-height: 100vh;
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            120deg,
+            rgba(4, 22, 39, 0.88),
+            rgba(6, 38, 65, 0.78)
+        ),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* BACK HOME */
+
+.back-home {
+    position: fixed;
+
+    top: 25px;
+    left: 28px;
+
+    z-index: 10;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    color: #e5f2ff;
+
+    background: rgba(6, 28, 48, 0.50);
+
+    border: 1px solid rgba(255,255,255,0.17);
+
+    border-radius: 9px;
+
+    backdrop-filter: blur(10px);
+
+    font-size: 12px;
+
+    transition: 0.25s ease;
+}
+
+.back-home:hover {
+    background: rgba(6, 28, 48, 0.72);
+
+    transform: translateX(-2px);
+}
+
+
+/* LOGIN CARD */
+
+.auth-card {
+    width: 410px;
+
+    max-width: calc(100% - 40px);
+
+    padding: 39px 40px;
+
+    position: relative;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 40, 65, 0.94),
+            rgba(7, 29, 50, 0.91)
+        );
+
+    border: 1px solid rgba(255,255,255,0.17);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 28px 70px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    animation: loginCard 0.55s ease;
+}
+
+.auth-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,174,255,0.85),
+            transparent
+        );
+}
+
+
+@keyframes loginCard {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* LOGIN LOGO */
+
+.auth-logo {
+    text-align: center;
+
+    margin-bottom: 26px;
+}
+
+.auth-logo > i {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #237fdc,
+            #12549e
+        );
+
+    color: white;
+
+    font-size: 24px;
+
+    box-shadow:
+        0 10px 25px rgba(18,84,158,0.35);
+}
+
+.auth-logo h2 {
+    margin: 13px 0 3px;
+
+    color: white;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+}
+
+.auth-logo h2 span {
+    color: #5db2ff;
+}
+
+.auth-logo p {
+    color: #aebfd0;
+
+    font-size: 12px;
+}
+
+
+/* LOGIN HEADING */
+
+.login-heading {
+    text-align: center;
+
+    margin-bottom: 23px;
+}
+
+.login-heading h1 {
+    margin-bottom: 5px;
+
+    color: white;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+}
+
+.login-heading p {
+    color: #a9bbcd;
+
+    font-size: 12px;
+}
+
+
+/* INPUT */
+
+.input-box {
+    position: relative;
+
+    margin-bottom: 15px;
+}
+
+.input-box > i:first-child {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #91afca;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.input-box input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 43px;
+
+    border: 1px solid rgba(255,255,255,0.13);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(255,255,255,0.075);
+
+    color: white;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+}
+
+.input-box input::placeholder {
+    color: #91a8bc;
+}
+
+.input-box input:focus {
+    border-color: rgba(78,166,244,0.75);
+
+    background: rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 0 0 3px rgba(65,157,235,0.10);
+}
+
+
+/* PASSWORD TOGGLE */
+
+.password-toggle {
+    position: absolute;
+
+    right: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #8ea9c0;
+
+    cursor: pointer;
+
+    z-index: 3;
+
+    transition: 0.2s;
+}
+
+.password-toggle:hover {
+    color: #58adff;
+}
+
+
+/* REMEMBER */
+
+.remember {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 4px 0 19px;
+
+    font-size: 12px;
+
+    color: #b2c2d2;
+}
+
+.remember label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.remember input {
+    accent-color: #217bd5;
+}
+
+.remember a {
+    color: #62b5ff;
+}
+
+.remember a:hover {
+    text-decoration: underline;
+}
+
+
+/* LOGIN BUTTON */
+
+.auth-btn {
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #237fdc,
+            #12549e
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 9px 22px rgba(10,74,135,0.28);
+
+    transition: 0.25s ease;
+}
+
+.auth-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #2d8ce9,
+            #155eae
+        );
+
+    transform: translateY(-2px);
+}
+
+.auth-btn i {
+    margin-right: 7px;
+}
+
+
+/* LOGIN MESSAGE */
+
+#loginMessage {
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #ffb4b4;
+
+    font-size: 12px;
+}
+
+
+/* REGISTER */
+
+.auth-link {
+    text-align: center;
+
+    margin-top: 21px;
+
+    padding-top: 19px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.10);
+
+    color: #aebfd0;
+
+    font-size: 12px;
+}
+
+.auth-link a {
+    color: #5eb3ff;
+
+    font-weight: 600;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   6. FEATURES PAGE
+   ISOLATED - DOES NOT AFFECT HOME FEATURE CARDS
+========================================================= */
+
+.features-page {
+    min-height: calc(100vh - 78px);
+
+    padding: 75px 6% 90px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            120deg,
+            rgba(4, 22, 39, 0.90),
+            rgba(6, 38, 65, 0.84)
+        ),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+
+/* FEATURES HEADER */
+
+.features-page .features-header {
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.features-page .features-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 15px;
+
+    margin-bottom: 18px;
+
+    color: #dceeff;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.16);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+.features-page .features-header h1 {
+    margin-bottom: 18px;
+
+    color: white;
+
+    font-size: clamp(35px, 4.5vw, 52px);
+
+    line-height: 1.12;
+
+    letter-spacing: -1px;
+}
+
+.features-page .features-header h1 span {
+    display: block;
+
+    color: #58adff;
+}
+
+.features-page .features-header p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #d0dfec;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* FEATURES GRID */
+
+.features-page .feature-grid {
+    max-width: 1150px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* FEATURE CARD */
+
+.features-page .feature-card {
+    position: relative;
+
+    min-height: 245px;
+
+    padding: 28px 25px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 40, 65, 0.94),
+            rgba(7, 29, 50, 0.91)
+        );
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.30),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    transition: 0.3s ease;
+}
+
+
+/* TOP LINE */
+
+.features-page .feature-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,174,255,0.75),
+            transparent
+        );
+}
+
+
+/* LEFT BLUE LINE */
+
+.features-page .feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 0;
+
+    background: #58adff;
+
+    transition: 0.3s ease;
+}
+
+.features-page .feature-card:hover::before {
+    height: 100%;
+}
+
+
+/* HOVER */
+
+.features-page .feature-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(82,174,255,0.38);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.40);
+}
+
+
+/* FEATURE ICON */
+
+.features-page .feature-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(35,127,220,0.16);
+
+    border:
+        1px solid rgba(82,174,255,0.16);
+
+    color: #58adff;
+
+    font-size: 19px;
+
+    transition: 0.3s ease;
+}
+
+.features-page .feature-card:hover .feature-icon {
+    background: #176dcc;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* FEATURE NUMBER */
+
+.features-page .feature-number {
+    position: absolute;
+
+    top: 24px;
+    right: 24px;
+
+    color: rgba(255,255,255,0.09);
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+
+/* FEATURE TITLE */
+
+.features-page .feature-card h2 {
+    margin-bottom: 9px;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* FEATURE DESCRIPTION */
+
+.features-page .feature-card p {
+    max-width: 320px;
+
+    color: #aebfd0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   7. HOW IT WORKS PAGE
+   ISOLATED
+========================================================= */
+
+.how-page {
+    min-height: calc(100vh - 78px);
+
+    padding: 80px 6% 90px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            120deg,
+            rgba(4, 22, 39, 0.93),
+            rgba(6, 38, 65, 0.84)
+        ),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+
+/* HEADER */
+
+.how-page .how-header {
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.how-page .how-tag {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    margin-bottom: 18px;
+
+    color: #dceeff;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.16);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.how-page .how-header h1 {
+    margin-bottom: 18px;
+
+    color: white;
+
+    font-size: clamp(36px, 5vw, 55px);
+
+    line-height: 1.12;
+}
+
+.how-page .how-header h1 span {
+    display: block;
+
+    color: #58adff;
+}
+
+.how-page .how-header p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #d0dfec;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* STEPS GRID */
+
+.how-page .steps-container {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* STEP CARD */
+
+.how-page .work-step {
+    min-height: 245px;
+
+    padding: 30px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 40, 65, 0.94),
+            rgba(7, 29, 50, 0.91)
+        );
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.30),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(16px);
+
+    transition: 0.3s ease;
+
+    overflow: hidden;
+}
+
+
+/* TOP BLUE LINE */
+
+.how-page .work-step::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+
+    width: 76%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,174,255,0.8),
+            transparent
+        );
+}
+
+
+/* HOVER */
+
+.how-page .work-step:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(82,174,255,0.38);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.42);
+}
+
+
+/* STEP NUMBER */
+
+.how-page .step-number {
+    position: absolute;
+
+    top: 22px;
+    right: 25px;
+
+    color: rgba(88,173,255,0.20);
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* STEP ICON */
+
+.how-page .step-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(35,127,220,0.14);
+
+    border:
+        1px solid rgba(82,174,255,0.18);
+
+    color: #58adff;
+
+    font-size: 21px;
+}
+
+
+/* STEP CONTENT */
+
+.how-page .step-content span {
+    color: #58adff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+}
+
+.how-page .step-content h2 {
+    margin: 7px 0 9px;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+.how-page .step-content p {
+    max-width: 440px;
+
+    color: #aebfd0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   8. ABOUT PAGE
+   ISOLATED - DOES NOT AFFECT OTHER PAGES
+========================================================= */
+
+.about-page {
+    min-height: calc(100vh - 78px);
+
+    padding: 80px 6% 90px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            120deg,
+            rgba(4, 22, 39, 0.93),
+            rgba(6, 38, 65, 0.84)
+        ),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+
+/* ABOUT HEADER */
+
+.about-page .about-header {
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ABOUT TAG */
+
+.about-page .about-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 16px;
+
+    margin-bottom: 18px;
+
+    color: #dceeff;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.16);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* ABOUT TITLE */
+
+.about-page .about-header h1 {
+    margin: 0 0 18px;
+
+    color: white;
+
+    font-size: clamp(36px, 5vw, 55px);
+
+    line-height: 1.12;
+
+    letter-spacing: -1px;
+}
+
+.about-page .about-header h1 span {
+    display: block;
+
+    color: #58adff;
+}
+
+
+/* ABOUT DESCRIPTION */
+
+.about-page .about-header p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #d0dfec;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ABOUT GRID */
+
+.about-page .about-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ABOUT CARD */
+
+.about-page .about-card {
+    min-height: 235px;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,40,65,0.94),
+            rgba(7,29,50,0.91)
+        );
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.30),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(16px);
+
+    -webkit-backdrop-filter: blur(16px);
+
+    transition: 0.3s ease;
+}
+
+
+/* TOP BLUE LINE */
+
+.about-page .about-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+
+    width: 76%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,174,255,0.8),
+            transparent
+        );
+}
+
+
+/* ABOUT CARD HOVER */
+
+.about-page .about-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(82,174,255,0.38);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.42);
+}
+
+
+/* ABOUT ICON */
+
+.about-page .about-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(35,127,220,0.14);
+
+    border:
+        1px solid rgba(82,174,255,0.18);
+
+    color: #58adff;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 8px 20px rgba(18,84,158,0.15);
+
+    transition: 0.3s ease;
+}
+
+
+/* ABOUT ICON HOVER */
+
+.about-page .about-card:hover .about-icon {
+    background: #176dcc;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(23,109,204,0.25);
+}
+
+
+/* ABOUT CARD TITLE */
+
+.about-page .about-card h2 {
+    margin-bottom: 9px;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* ABOUT CARD TEXT */
+
+.about-page .about-card p {
+    max-width: 440px;
+
+    color: #aebfd0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ABOUT HIGHLIGHT */
+
+.about-page .about-highlight {
+    max-width: 1050px;
+
+    margin: 24px auto 0;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    position: relative;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,40,65,0.95),
+            rgba(7,29,50,0.92)
+        );
+
+    border: 1px solid rgba(82,174,255,0.20);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.28);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* HIGHLIGHT ICON */
+
+.about-page .highlight-icon {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        rgba(35,127,220,0.15);
+
+    color: #58adff;
+
+    font-size: 20px;
+}
+
+
+/* HIGHLIGHT TITLE */
+
+.about-page .about-highlight h2 {
+    margin-bottom: 4px;
+
+    color: white;
+
+    font-size: 18px;
+}
+
+
+/* HIGHLIGHT TEXT */
+
+.about-page .about-highlight p {
+    color: #aebfd0;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   9. FOOTER
+========================================================= */
+
+.footer {
+    padding: 55px 7% 0;
+
+    background: #071b30;
+
+    color: white;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding-bottom: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.footer-logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #176dcc;
+
+    border-radius: 11px;
+
+    font-size: 18px;
+}
+
+.footer-logo h2 {
+    font-size: 20px;
+}
+
+.footer-logo h2 span {
+    color: #55adff;
+}
+
+.footer-logo p {
+    color: #899caf;
+
+    font-size: 11px;
+}
+
+.footer-description {
+    max-width: 290px;
+
+    margin-top: 18px;
+
+    color: #9caec0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 8px;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.footer-links a {
+    color: #9caec0;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.footer-links a:hover {
+    color: #58adff;
+
+    transform: translateX(3px);
+}
+
+.footer-contact p {
+    margin-bottom: 11px;
+
+    color: #9caec0;
+
+    font-size: 13px;
+}
+
+.footer-contact i {
+    width: 18px;
+
+    color: #55adff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 18px 0;
+
+    border-top:
+        1px solid rgba(255,255,255,0.10);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: #71859a;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   10. RESPONSIVE - NAVBAR
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .navbar nav {
+        gap: 16px;
+    }
+
+    .features-container {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================================
+   11. RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-wrap: wrap;
+
+        height: auto;
+
+        padding: 14px 5%;
+
+        gap: 13px;
+    }
+
+    .navbar nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 17px;
+    }
+
+    .navbar nav a {
+        padding: 7px 0;
+    }
+
+    .navbar nav a.active::after {
+        bottom: 0;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+    }
+
+    .footer-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   12. FEATURES / ABOUT / HOW TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .features-page .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-page .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   13. HOW IT WORKS TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .how-page .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .how-page {
+        padding: 65px 6% 70px;
+    }
+
+    .about-page {
+        padding: 65px 6% 70px;
+    }
+
+    .about-page .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   14. MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .logo-text small {
+        display: none;
+    }
+
+    .language {
+        display: none;
+    }
+
+    .hero {
+        min-height: calc(100vh - 125px);
+    }
+
+    .hero-content {
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .hero-text > p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .trust {
+        flex-wrap: wrap;
+
+        gap: 13px;
+    }
+
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+
+    .features-section {
+        padding: 65px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .features-page .feature-grid {
+        grid-template-columns: 1fr;
+
+        padding: 0 5%;
+    }
+
+    .features-page {
+        padding: 60px 6% 70px;
+    }
+
+    .how-page .how-header h1 {
+        font-size: 35px;
+    }
+
+    .how-page .how-header p {
+        font-size: 13px;
+    }
+
+    .about-page .about-header h1 {
+        font-size: 35px;
+    }
+
+    .about-page .about-header p {
+        font-size: 13px;
+    }
+
+    .auth-card {
+        padding: 32px 24px;
+
+        border-radius: 19px;
+    }
+
+    .back-home {
+        top: 14px;
+        left: 14px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 7px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   15. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .about-page .about-header h1 {
+        font-size: 34px;
+    }
+
+    .about-page .about-card {
+        padding: 25px;
+    }
+
+    .about-page .about-highlight {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .how-page .how-header h1 {
+        font-size: 34px;
+    }
+
+    .how-page .work-step {
+        min-height: 220px;
+
+        padding: 25px;
+    }
+
+    .how-page .step-number {
+        font-size: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   16. VERY SMALL MOBILE - LOGIN
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .auth-card {
+        width: calc(100% - 28px);
+
+        padding: 28px 20px;
+    }
+
+    .auth-logo > i {
+        width: 54px;
+        height: 54px;
+
+        font-size: 22px;
+    }
+
+    .auth-logo h2 {
+        font-size: 23px;
+    }
+
+    .login-heading h1 {
+        font-size: 21px;
+    }
+
+}
+
+/* =========================================================
+   VIDHAN AI - UPLOAD & MY DOCUMENTS
+   Matching Features / About / Login Theme
+========================================================= */
+
+
+/* =========================================================
+   1. UPLOAD PAGE
+========================================================= */
+
+.upload-page,
+.documents-page {
+
+    min-height: calc(100vh - 78px);
+
+    padding: 75px 6% 90px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            120deg,
+            rgba(4, 22, 39, 0.93),
+            rgba(6, 38, 65, 0.84)
+        ),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+
+/* =========================================================
+   2. UPLOAD HEADER
+========================================================= */
+
+.upload-header,
+.documents-header {
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+
+.upload-tag,
+.documents-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    margin-bottom: 18px;
+
+    color: #dceeff;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.16);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.upload-header h1,
+.documents-header h1 {
+
+    margin-bottom: 17px;
+
+    color: white;
+
+    font-size: clamp(36px, 5vw, 52px);
+
+    line-height: 1.12;
+
+    letter-spacing: -1px;
+}
+
+
+.upload-header h1 span,
+.documents-header h1 span {
+
+    color: #58adff;
+}
+
+
+.upload-header p,
+.documents-header p {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #d0dfec;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   3. UPLOAD CARD
+========================================================= */
+
+.upload-card {
+
+    width: 100%;
+
+    max-width: 620px;
+
+    margin: auto;
+
+    padding: 38px 40px;
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 40, 65, 0.94),
+            rgba(7, 29, 50, 0.91)
+        );
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.32),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(16px);
+
+    -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* TOP LIGHT LINE */
+
+.upload-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 15%;
+
+    width: 70%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,174,255,0.8),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   4. UPLOAD ICON
+========================================================= */
+
+.upload-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        rgba(35,127,220,0.15);
+
+    border: 1px solid rgba(82,174,255,0.18);
+
+    color: #58adff;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 8px 20px rgba(18,84,158,0.15);
+}
+
+
+.upload-card h2 {
+
+    margin-bottom: 7px;
+
+    color: white;
+
+    font-size: 21px;
+}
+
+
+.upload-card > p {
+
+    margin-bottom: 24px;
+
+    color: #aebfd0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   5. FILE UPLOAD BOX
+========================================================= */
+
+.upload-box {
+
+    min-height: 160px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 25px;
+
+    cursor: pointer;
+
+    border: 1px dashed rgba(88,173,255,0.45);
+
+    border-radius: 15px;
+
+    background:
+        rgba(35,127,220,0.07);
+
+    transition: 0.3s ease;
+}
+
+
+.upload-box:hover {
+
+    background:
+        rgba(35,127,220,0.13);
+
+    border-color: #58adff;
+
+    transform: translateY(-2px);
+}
+
+
+.upload-box i {
+
+    margin-bottom: 5px;
+
+    color: #58adff;
+
+    font-size: 31px;
+}
+
+
+.upload-box span {
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.upload-box small {
+
+    color: #91a8bc;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   6. SELECTED FILE
+========================================================= */
+
+.selected-file {
+
+    min-height: 45px;
+
+    margin-top: 15px;
+
+    padding: 10px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: left;
+
+    color: #cfe2f3;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    border-radius: 10px;
+
+    font-size: 12px;
+}
+
+
+.selected-file i {
+
+    color: #58adff;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   7. UPLOAD BUTTON
+========================================================= */
+
+.upload-btn {
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #237fdc,
+            #12549e
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 9px 22px rgba(10,74,135,0.28);
+
+    transition: 0.25s ease;
+}
+
+
+.upload-btn:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2d8ce9,
+            #155eae
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 13px 28px rgba(10,74,135,0.38);
+}
+
+
+.upload-btn i {
+
+    margin-right: 7px;
+}
+
+
+.upload-message {
+
+    margin-top: 13px !important;
+
+    margin-bottom: 0 !important;
+
+    color: #58adff !important;
+
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   8. MY DOCUMENTS HEADER
+========================================================= */
+
+.documents-header {
+
+    max-width: 1150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    text-align: left;
+}
+
+
+.documents-header p {
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   9. NEW UPLOAD BUTTON
+========================================================= */
+
+.new-upload-btn {
+
+    flex-shrink: 0;
+
+    height: 48px;
+
+    padding: 0 19px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #237fdc,
+            #12549e
+        );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 9px 22px rgba(10,74,135,0.28);
+
+    transition: 0.25s ease;
+}
+
+
+.new-upload-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 13px 28px rgba(10,74,135,0.38);
+}
+
+
+.new-upload-btn i {
+
+    margin-right: 7px;
+}
+
+
+/* =========================================================
+   10. SEARCH
+========================================================= */
+
+.document-tools {
+
+    max-width: 1150px;
+
+    margin: 0 auto 22px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.search-box {
+
+    max-width: 400px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 15px;
+
+    background:
+        rgba(7,29,50,0.90);
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(12px);
+}
+
+
+.search-box i {
+
+    color: #58adff;
+
+    font-size: 14px;
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+
+.search-box input::placeholder {
+
+    color: #91a8bc;
+}
+
+
+/* =========================================================
+   11. DOCUMENT GRID
+========================================================= */
+
+.documents-grid {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   12. DOCUMENT CARD
+========================================================= */
+
+.document-card {
+
+    min-height: 135px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,40,65,0.94),
+            rgba(7,29,50,0.91)
+        );
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.3s ease;
+}
+
+
+/* TOP BLUE LINE */
+
+.document-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 12%;
+
+    width: 76%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,174,255,0.75),
+            transparent
+        );
+}
+
+
+.document-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(82,174,255,0.38);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,0.38);
+}
+
+
+/* =========================================================
+   13. DOCUMENT ICON
+========================================================= */
+
+.document-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(35,127,220,0.14);
+
+    border: 1px solid rgba(82,174,255,0.18);
+
+    color: #58adff;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   14. DOCUMENT INFO
+========================================================= */
+
+.document-info {
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.document-info h2 {
+
+    margin-bottom: 4px;
+
+    color: white;
+
+    font-size: 16px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.document-info p {
+
+    margin-bottom: 3px;
+
+    color: #aebfd0;
+
+    font-size: 12px;
+}
+
+
+.document-info small {
+
+    color: #718ca4;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   15. DOCUMENT ACTIONS
+========================================================= */
+
+.document-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.document-actions button {
+
+    width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color: #9db6cc;
+
+    transition: 0.2s ease;
+}
+
+
+.document-actions button:hover {
+
+    background: #176dcc;
+
+    border-color: #176dcc;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   16. RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .documents-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .documents-header > div {
+
+        width: 100%;
+    }
+
+    .documents-header p {
+
+        margin: auto;
+    }
+
+    .new-upload-btn {
+
+        width: 100%;
+    }
+
+    .documents-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .upload-page,
+    .documents-page {
+
+        padding: 60px 6% 70px;
+    }
+
+    .upload-card {
+
+        padding: 30px 22px;
+    }
+
+    .upload-header h1,
+    .documents-header h1 {
+
+        font-size: 35px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .document-card {
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+        padding: 20px;
+    }
+
+    .document-info {
+
+        width: calc(100% - 78px);
+    }
+
+    .document-actions {
+
+        width: 100%;
+
+        margin-top: 8px;
+
+        justify-content: flex-end;
+    }
+
+}

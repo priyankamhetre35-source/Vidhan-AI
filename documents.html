@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Documents - Vidhan AI</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Your Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                Vidhan <span>AI</span>
+            </h2>
+
+            <small>
+                Legal Intelligence Platform
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="features.html">
+            Features
+        </a>
+
+        <a href="how-it-works.html">
+            How It Works
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="documents.html" class="active">
+            My Documents
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button class="language">
+
+            <i class="fa-solid fa-globe"></i>
+
+            EN
+
+        </button>
+
+        <button class="login-btn"
+                onclick="window.location.href='login.html'">
+
+            Login
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= DOCUMENT PAGE ================= -->
+
+<main class="documents-page">
+
+
+    <!-- HEADER -->
+
+    <div class="documents-header">
+
+        <div>
+
+            <span class="documents-tag">
+                <i class="fa-solid fa-folder-open"></i>
+                DOCUMENT CENTER
+            </span>
+
+            <h1>
+                My <span>Documents</span>
+            </h1>
+
+            <p>
+                Manage and access your uploaded legal documents
+                in one secure place.
+            </p>
+
+        </div>
+
+
+        <button class="new-upload-btn"
+                onclick="window.location.href='upload.html'">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Upload New
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="document-tools">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search documents..."
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DOCUMENT GRID ================= -->
+
+    <div class="documents-grid" id="documentsGrid">
+
+
+        <!-- DOCUMENT CARD -->
+
+        <div class="document-card">
+
+            <div class="document-icon">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+            </div>
+
+
+            <div class="document-info">
+
+                <h2>
+                    Legal Agreement.pdf
+                </h2>
+
+                <p>
+                    PDF Document
+                </p>
+
+                <small>
+                    Uploaded recently
+                </small>
+
+            </div>
+
+
+            <div class="document-actions">
+
+                <button title="View">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </button>
+
+                <button title="Download">
+
+                    <i class="fa-solid fa-download"></i>
+
+                </button>
+
+                <button title="Delete">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECOND DOCUMENT -->
+
+        <div class="document-card">
+
+            <div class="document-icon">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+
+            <div class="document-info">
+
+                <h2>
+                    Contract Document.pdf
+                </h2>
+
+                <p>
+                    PDF Document
+                </p>
+
+                <small>
+                    Uploaded recently
+                </small>
+
+            </div>
+
+
+            <div class="document-actions">
+
+                <button title="View">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </button>
+
+                <button title="Download">
+
+                    <i class="fa-solid fa-download"></i>
+
+                </button>
+
+                <button title="Delete">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const cards =
+    document.querySelectorAll(".document-card");
+
+
+searchInput.addEventListener("input", function () {
+
+    const searchValue =
+        this.value.toLowerCase();
+
+
+    cards.forEach(card => {
+
+        const title =
+            card.querySelector("h2")
+                .textContent
+                .toLowerCase();
+
+
+        if (title.includes(searchValue)) {
+
+            card.style.display = "flex";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>

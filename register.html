@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - Vidhan AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body class="auth-body">
+
+
+    <!-- BACKGROUND OVERLAY -->
+
+    <div class="auth-overlay"></div>
+
+
+    <!-- BACK TO LOGIN -->
+
+    <a href="login.html" class="back-home">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back to Login
+
+    </a>
+
+
+    <!-- REGISTER CARD -->
+
+    <div class="auth-card">
+
+
+        <!-- LOGO -->
+
+        <div class="auth-logo">
+
+            <div class="auth-logo-icon">
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+            </div>
+
+
+            <h2>
+                Vidhan <span>AI</span>
+            </h2>
+
+
+            <p>
+                Legal Document Explainer
+            </p>
+
+        </div>
+
+
+        <!-- HEADING -->
+
+        <div class="login-heading">
+
+            <h1>
+                Create Account
+            </h1>
+
+            <p>
+                Create your Vidhan AI account
+            </p>
+
+        </div>
+
+
+
+        <!-- REGISTER FORM -->
+
+        <form id="registerForm">
+
+
+            <!-- NAME -->
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Full Name"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Password"
+                    required
+                >
+
+                <i
+                    class="fa-solid fa-eye password-toggle"
+                    id="toggleRegisterPassword">
+                </i>
+
+            </div>
+
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm Password"
+                    required
+                >
+
+                <i
+                    class="fa-solid fa-eye password-toggle"
+                    id="toggleConfirmPassword">
+                </i>
+
+            </div>
+
+
+
+            <!-- TERMS -->
+
+            <div class="remember">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        I agree to Terms & Conditions
+                    </span>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- REGISTER BUTTON -->
+
+            <button
+                type="submit"
+                class="auth-btn">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Create Account
+
+            </button>
+
+
+
+            <!-- MESSAGE -->
+
+            <p id="registerMessage"></p>
+
+
+        </form>
+
+
+
+        <!-- LOGIN -->
+
+        <div class="auth-link">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </div>
+
+
+
+        <!-- SECURITY -->
+
+        <div class="login-security">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Secure & Private Registration
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PASSWORD TOGGLE SCRIPT -->
+
+    <script>
+
+        const registerPassword =
+            document.getElementById("registerPassword");
+
+        const toggleRegisterPassword =
+            document.getElementById("toggleRegisterPassword");
+
+
+        toggleRegisterPassword.addEventListener("click", function () {
+
+            const type =
+                registerPassword.getAttribute("type") === "password"
+                    ? "text"
+                    : "password";
+
+
+            registerPassword.setAttribute("type", type);
+
+
+            this.classList.toggle("fa-eye");
+
+            this.classList.toggle("fa-eye-slash");
+
+        });
+
+
+
+        const confirmPassword =
+            document.getElementById("confirmPassword");
+
+        const toggleConfirmPassword =
+            document.getElementById("toggleConfirmPassword");
+
+
+        toggleConfirmPassword.addEventListener("click", function () {
+
+            const type =
+                confirmPassword.getAttribute("type") === "password"
+                    ? "text"
+                    : "password";
+
+
+            confirmPassword.setAttribute("type", type);
+
+
+            this.classList.toggle("fa-eye");
+
+            this.classList.toggle("fa-eye-slash");
+
+        });
+
+
+    </script>
+
+
+
+    <!-- REGISTER JAVASCRIPT -->
+
+    <script>
+
+        document
+            .getElementById("registerForm")
+            .addEventListener("submit", async function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("registerName").value.trim();
+
+                const email =
+                    document.getElementById("registerEmail").value.trim();
+
+                const password =
+                    document.getElementById("registerPassword").value;
+
+                const confirmPassword =
+                    document.getElementById("confirmPassword").value;
+
+                const message =
+                    document.getElementById("registerMessage");
+
+
+                /* CHECK PASSWORD */
+
+                if (password !== confirmPassword) {
+
+                    message.style.color = "#ff9b9b";
+
+                    message.textContent =
+                        "Passwords do not match.";
+
+                    return;
+                }
+
+
+                /* BACKEND API */
+
+                try {
+
+                    const response = await fetch(
+                        "http://localhost:5000/api/auth/register",
+                        {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                name: name,
+
+                                email: email,
+
+                                password: password
+
+                            })
+
+                        }
+                    );
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (response.ok) {
+
+                        message.style.color =
+                            "#63d7a0";
+
+                        message.textContent =
+                            "Account created successfully!";
+
+
+                        setTimeout(function () {
+
+                            window.location.href =
+                                "login.html";
+
+                        }, 1200);
+
+
+                    } else {
+
+                        message.style.color =
+                            "#ff9b9b";
+
+                        message.textContent =
+                            data.message ||
+                            "Registration failed.";
+
+                    }
+
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    message.style.color =
+                        "#ff9b9b";
+
+                    message.textContent =
+                        "Unable to connect to server.";
+
+                }
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>

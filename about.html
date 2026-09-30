@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vidhan AI | About</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                Vidhan<span>AI</span>
+            </h2>
+
+            <small>
+                Legal Document Explainer
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="features.html">
+            Features
+        </a>
+
+        <a href="how-it-works.html">
+            How It Works
+        </a>
+
+        <a class="active" href="about.html">
+            About
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="documents.html">
+            My Documents
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button class="language">
+
+            <i class="fa-solid fa-globe"></i>
+
+            Marathi
+
+        </button>
+
+
+        <button
+            class="login-btn"
+            id="loginBtn"
+            onclick="window.location.href='login.html'">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            Login
+
+        </button>
+
+
+        <button
+            class="login-btn logout-btn"
+            id="logoutBtn"
+            onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= ABOUT PAGE ================= -->
+
+<main class="about-page">
+
+
+    <!-- HEADER -->
+
+    <section class="about-header">
+
+        <span class="about-tag">
+            ABOUT VIDHAN AI
+        </span>
+
+        <h1>
+            Making Legal Documents
+            <span>Easy to Understand</span>
+        </h1>
+
+        <p>
+            Vidhan AI is designed to simplify complex legal documents
+            and present important information in clear and simple language.
+        </p>
+
+    </section>
+
+
+
+    <!-- ABOUT CARDS -->
+
+    <section class="about-grid">
+
+
+        <!-- OUR MISSION -->
+
+        <div class="about-card">
+
+            <div class="about-icon">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+            </div>
+
+            <h2>
+                Our Mission
+            </h2>
+
+            <p>
+                Our mission is to make legal information easier to
+                understand by reducing complicated legal language
+                into simple and meaningful explanations.
+            </p>
+
+        </div>
+
+
+
+        <!-- OUR VISION -->
+
+        <div class="about-card">
+
+            <div class="about-icon">
+
+                <i class="fa-solid fa-eye"></i>
+
+            </div>
+
+            <h2>
+                Our Vision
+            </h2>
+
+            <p>
+                We aim to create a simple and accessible platform
+                where users can understand their legal documents
+                without being overwhelmed by complex terminology.
+            </p>
+
+        </div>
+
+
+
+        <!-- WHY VIDHAN AI -->
+
+        <div class="about-card">
+
+            <div class="about-icon">
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+            </div>
+
+            <h2>
+                Why Vidhan AI?
+            </h2>
+
+            <p>
+                Legal documents can contain difficult terms and
+                lengthy clauses. Vidhan AI helps users identify
+                summaries, key terms and important clauses quickly.
+            </p>
+
+        </div>
+
+
+
+        <!-- USER FIRST -->
+
+        <div class="about-card">
+
+            <div class="about-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <h2>
+                User Focused
+            </h2>
+
+            <p>
+                The platform is designed with simplicity, privacy
+                and ease of use in mind so that users can navigate
+                and understand their documents comfortably.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- BOTTOM INFO -->
+
+    <section class="about-highlight">
+
+        <div class="highlight-icon">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+        </div>
+
+        <div>
+
+            <h2>
+                Simple. Secure. Understandable.
+            </h2>
+
+            <p>
+                Vidhan AI brings legal documents, important clauses,
+                key terms and explanations together in one simple platform.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<script>
+
+function updateLoginButton() {
+
+    const token = localStorage.getItem("token");
+
+    const loginBtn =
+        document.getElementById("loginBtn");
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    if (token) {
+
+        loginBtn.style.display = "none";
+
+        logoutBtn.style.display = "block";
+
+    } else {
+
+        loginBtn.style.display = "block";
+
+        logoutBtn.style.display = "none";
+
+    }
+
+}
+
+
+function logout() {
+
+    localStorage.removeItem("token");
+
+    localStorage.removeItem("user");
+
+    window.location.href = "index.html";
+
+}
+
+
+updateLoginButton();
+
+</script>
+
+
+</body>
+
+</html>
+

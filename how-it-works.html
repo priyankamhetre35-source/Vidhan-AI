@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vidhan AI | How It Works</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                Vidhan<span>AI</span>
+            </h2>
+
+            <small>
+                Legal Document Explainer
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="features.html">
+            Features
+        </a>
+
+        <a class="active" href="how-it-works.html">
+            How It Works
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="upload.html">
+            Upload
+        </a>
+
+        <a href="documents.html">
+            My Documents
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button class="language">
+
+            <i class="fa-solid fa-globe"></i>
+
+            Marathi
+
+        </button>
+
+
+        <button
+            class="login-btn"
+            id="loginBtn"
+            onclick="window.location.href='login.html'">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            Login
+
+        </button>
+
+
+        <button
+            class="login-btn logout-btn"
+            id="logoutBtn"
+            onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<main class="how-page">
+
+
+    <!-- HEADER -->
+
+    <section class="how-header">
+
+        <span class="how-tag">
+            HOW VIDHAN AI WORKS
+        </span>
+
+        <h1>
+            Understand Your Legal
+            <span>Documents in 4 Simple Steps</span>
+        </h1>
+
+        <p>
+            From uploading your document to getting a clear
+            explanation, Vidhan AI makes the process simple
+            and easy to understand.
+        </p>
+
+    </section>
+
+
+
+    <!-- STEPS -->
+
+    <section class="steps-container">
+
+
+        <!-- STEP 1 -->
+
+        <div class="work-step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div class="step-icon">
+
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            </div>
+
+            <div class="step-content">
+
+                <span>
+                    STEP 01
+                </span>
+
+                <h2>
+                    Upload Document
+                </h2>
+
+                <p>
+                    Upload your legal document in PDF or text
+                    format using the secure upload section.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 2 -->
+
+        <div class="work-step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div class="step-icon">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <div class="step-content">
+
+                <span>
+                    STEP 02
+                </span>
+
+                <h2>
+                    AI Analysis
+                </h2>
+
+                <p>
+                    Vidhan AI processes the document and identifies
+                    important information, clauses and legal terms.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 3 -->
+
+        <div class="work-step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-icon">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+            <div class="step-content">
+
+                <span>
+                    STEP 03
+                </span>
+
+                <h2>
+                    Get Explanation
+                </h2>
+
+                <p>
+                    Receive a simple summary and clear explanation
+                    of the important parts of your document.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 4 -->
+
+        <div class="work-step">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <div class="step-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div class="step-content">
+
+                <span>
+                    STEP 04
+                </span>
+
+                <h2>
+                    Understand Easily
+                </h2>
+
+                <p>
+                    Review the important points and understand
+                    your legal document in simple language.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script>
+
+function updateLoginButton() {
+
+    const token = localStorage.getItem("token");
+
+    const loginBtn =
+        document.getElementById("loginBtn");
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    if (token) {
+
+        loginBtn.style.display = "none";
+
+        logoutBtn.style.display = "block";
+
+    } else {
+
+        loginBtn.style.display = "block";
+
+        logoutBtn.style.display = "none";
+
+    }
+
+}
+
+
+function logout() {
+
+    localStorage.removeItem("token");
+
+    localStorage.removeItem("user");
+
+    window.location.href = "index.html";
+
+}
+
+
+updateLoginButton();
+
+</script>
+
+
+</body>
+
+</html>
+
